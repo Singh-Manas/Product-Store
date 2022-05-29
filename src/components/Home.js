@@ -8,16 +8,28 @@ class Home extends Component{
 
     constructor(){
         super();
-        this.setState = {
-            productData: JSONData
+        this.state = {
+            productData: JSONData,
+            filteredData: JSONData
         }
+    }
+
+    filterProduct(userInput){
+        // console.log(userInput);
+        // console.log(this.state.filteredData);
+        let afterFilterData = this.state.productData.filter((item) => {
+            return item.name.toLowerCase().indexOf(userInput.toLowerCase()) > -1;
+        });
+        this.setState({
+            filteredData: afterFilterData
+        });
     }
 
     render(){
         return(
             <>
-                <Header/>
-                <ProductDisplay productData = {this.state.productData}/>
+                <Header userText={(data) => this.filterProduct(data)}/>
+                <ProductDisplay productData = {this.state.filteredData}/>
                 <Footer/>
             </>
         );

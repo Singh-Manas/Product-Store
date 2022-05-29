@@ -1,0 +1,11 @@
+.card{
+    margin:2%;
+    box-shadow: 5px 10px 15px gray;
+    float: left;
+}
+
+.card > img{
+    height:150px;
+    width: 50%;
+    margin: auto;
+}

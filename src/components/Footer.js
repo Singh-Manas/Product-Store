@@ -4,6 +4,7 @@ const Footer = () => {
     return(
         <>
             <center>
+                <hr/>
                 &copy; Manas Singh
             </center>
         </>

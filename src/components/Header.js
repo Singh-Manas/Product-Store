@@ -12,10 +12,12 @@ class Header extends React.Component{
     }
 
     handleChange = (event) => {
-        // console.log(event.target.value);
+        // console.log(event.target.value.length);
         this.setState({
             userText: event.target.value
         });
+        // Passing data to Home (Parent)
+        this.props.userText(event.target.value);
     }
 
     render(){
@@ -25,7 +27,7 @@ class Header extends React.Component{
                     <div className='title'>
                         <center>
                             <div>{this.state.title}</div>
-                            <input onChange={this.handleChange}/>
+                            <input onChange={this.handleChange} placeholder='Search Products'/>
                             <div style={{fontSize: "20px"}}>{this.state.userText}</div>
                         </center>
                     </div>
